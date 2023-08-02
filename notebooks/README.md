@@ -9,5 +9,5 @@
 
 # References
 
-https://note.com/npaka/n/n3164e8b24539
-https://note.com/npaka/n/n6d33c2181050
+- https://note.com/npaka/n/n3164e8b24539
+- https://note.com/npaka/n/n6d33c2181050
