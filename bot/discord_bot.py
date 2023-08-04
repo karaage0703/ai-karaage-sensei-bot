@@ -7,6 +7,19 @@ from langchain.vectorstores.faiss import FAISS
 import logging
 import sys
 
+import discord
+from discord import app_commands
+
+import configparser
+
+config = configparser.ConfigParser()
+config.read('.config')
+
+DISCORD_TOKEN = config.get('discord_key', 'key')
+
+intents = discord.Intents.default()#適当に。
+client = discord.Client(intents=intents)
+tree = app_commands.CommandTree(client)
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, force=True)
 
@@ -30,7 +43,15 @@ qa_chain = RetrievalQA.from_chain_type(
     verbose=True,
 )
 
-while True:
-    input_text = input('> ')
+@client.event
+async def on_ready():
+    print("bot ready")
+    await tree.sync()
 
-    print("karaage_sensei:", qa_chain.run("日本語で答えてください。" + input_text))
+@tree.command(name="ask",description="AIからあげ先生への質問を入力してください。")
+async def test_command(interaction: discord.Interaction, text:str="test"):
+    await interaction.response.defer(thinking=True)
+    response = qa_chain.run("日本語で答えてください。" + text)
+    await interaction.followup.send(text + 'の質問の回答は' + response)
+
+client.run(DISCORD_TOKEN)

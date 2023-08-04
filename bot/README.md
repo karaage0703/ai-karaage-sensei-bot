@@ -17,7 +17,7 @@ $ cd ~/ai-karaage-sensei-bot/bot
 $ docker run -it -v $(pwd):/root --gpus all ubuntu:ai-karaage-sensei-bot
 ```
 
-Use CPU 
+Use CPU
 
 ```sh
 $ cd ~/ai-karaage-sensei-bot/bot
@@ -40,3 +40,5 @@ root@hostname:~# python3 qa_bot.py
 ## References
 
 - https://note.com/npaka/n/n3164e8b24539
+- https://qiita.com/Kodai0417/items/3abff9575e132e2955ec
+- https://qiita.com/Yumax-panda/items/9349e06f5a12d4466ca7
