@@ -17,7 +17,7 @@ config.read('.config')
 
 DISCORD_TOKEN = config.get('discord_key', 'key')
 
-intents = discord.Intents.default()#適当に。
+intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 tree = app_commands.CommandTree(client)
 
