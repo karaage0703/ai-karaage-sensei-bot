@@ -1,4 +1,4 @@
-# ai-karaage-sensei-bot
+# ai-karaage-sensei-bot(Weblab ver)
 
 ## Setup
 
@@ -25,17 +25,6 @@ $ docker run -it -v $(pwd):/root ubuntu:ai-karaage-sensei-weblab-bot
 ```
 
 In container
-
-```sh
-# make index
-root@hostname:~# python3 make_index.py
-```
-
-
-```sh
-# run bot
-root@hostname:~# python3 qa_bot.py
-```
 
 ```sh
 # run bot with discord
