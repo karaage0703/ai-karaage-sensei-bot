@@ -7,3 +7,5 @@ RUN pip install tokenizers>=0.13.2 prompt_toolkit numpy torch
 RUN pip install rwkv transformers accelerate sentencepiece colorama
 RUN pip install llama-cpp-python langchain sentence_transformers faiss-gpu
 RUN pip install discord
+
+WORKDIR /root

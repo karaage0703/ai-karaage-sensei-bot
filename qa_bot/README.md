@@ -24,16 +24,22 @@ $ cd ~/ai-karaage-sensei-bot/bot
 $ docker run -it -v $(pwd):/root ubuntu:ai-karaage-sensei-bot
 ```
 
+In container
 
 ```sh
-root@hostname:/# cd /root
+# make index
 root@hostname:~# python3 make_index.py
 ```
 
 
 ```sh
-root@hostname:/# cd /root
+# run bot
 root@hostname:~# python3 qa_bot.py
+```
+
+```sh
+# run bot with discord
+root@hostname:~# python3 discord_bot.py
 ```
 
 
